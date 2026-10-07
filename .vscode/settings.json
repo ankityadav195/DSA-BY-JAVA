@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "loop.java",
+        "index.java",
+        "PrintNumbers.java",
+        ""
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}

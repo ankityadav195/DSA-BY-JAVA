@@ -1,0 +1,12 @@
+import java.awt.*;
+
+import java.swing.JFrame;
+
+import java.applet.*;
+public class HelloJava extends Applet
+{
+    public void paint (Graphics g)
+    {
+        g.drawString("Hello Java",10, 100);
+    }
+}
