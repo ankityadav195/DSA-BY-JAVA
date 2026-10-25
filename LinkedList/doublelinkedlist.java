@@ -48,7 +48,7 @@ class DLL {
             head = head.next;
             head.pre = null;
         }
-        size++;
+        size--;
     }
 
     void deleteInTail(int val) {
@@ -56,13 +56,15 @@ class DLL {
         if (head == null)
             head = tail = temp;
         else {
-            head = head.next;
-            head.pre = null;
+            
+            tail= tail.pre;
+            tail.next = null;
         }
-        size++;
+        size--;
     }
 
     void disply() {
+
         ListNode temp = head;
         while (temp != null) {
             System.out.print(temp.val + " ");
@@ -82,6 +84,41 @@ class DLL {
 
     }
 
+
+
+    void insertAtValu( int idx,int val ){
+        if(idx <0 || idx > size){
+            System.out.println("Invail idex ");
+            return ;
+        }
+        if(idx==0){
+            insertAtHead(val);
+        }
+        if(idx==size){
+            insertAtTail(val);
+            return;
+        } 
+
+
+        ListNode temp = head;
+        ListNode a = new ListNode(val);
+       if(head == null){
+        head = tail = null;
+          }
+          for(int i = 1 ; i<= idx-1;i++){
+            temp = temp.next;
+          }
+        ListNode h = temp.next;
+        temp.next = a;
+        a.pre = temp;
+        a.next = h;
+        h.pre = a;
+        size++;
+
+
+       
+
+    }
 }
 
 public class doublelinkedlist {
@@ -92,15 +129,28 @@ public class doublelinkedlist {
         // list.insertAtHead(30);
         // list.insertAtHead(40);
         // list.insertAtHead(50);
-        list.disply();
+        // list.disply();
         list.insertAtTail(10);
         list.insertAtTail(20);
         list.insertAtTail(30);
         list.insertAtTail(40);
         list.insertAtTail(50);
-        list.disply();
-        
-        list.displyresver();
+        // list.disply();
+        // list.displyresver();
+
+            
+
+
+
+
+        // list.deleteInHead(0);
+        // list.deleteInTail(0);
+            list.disply();
+
+
+            list.insertAtValu(2,50);
+                        list.disply();
+
 
     }
 
